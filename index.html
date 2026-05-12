@@ -1,147 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brian Mulholland</title>
 
   <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
     }
 
     header {
-      background-color: #0C2340;
+      background:
+        linear-gradient(rgba(12, 35, 64, 0.92), rgba(12, 35, 64, 0.92));
       color: white;
-      padding: 80px 20px;
-      text-align: center;
+      padding: 90px 24px 70px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      max-width: 720px;
+      color: #e9eef5;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .hero-card p {
+      color: #e9eef5;
+      margin-bottom: 0;
     }
 
     nav {
       background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
     }
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #0C2340;
-      font-weight: bold;
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
     }
 
     section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
+      margin-bottom: 70px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      color: var(--nd-blue);
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 760px;
     }
 
     .card {
-      background: white;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .highlight {
+      border-left: 5px solid var(--nd-gold);
     }
 
     footer {
+      background: var(--nd-blue);
+      color: white;
       text-align: center;
-      padding: 30px;
-      background: #eee;
-      color: #555;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 850px) {
+      .hero,
+      .two-column,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Brian Mulholland</h1>
-  <p>Mathematics • Teaching Innovation • Student Formation</p>
-</header>
+  <header>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">University of Notre Dame · Department of Mathematics</div>
+        <h1>Brian Mulholland</h1>
+        <p class="subtitle">
+          Mathematics educator working at the intersection of active learning,
+          student formation, educational technology, and interdisciplinary teaching.
+        </p>
+      </div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#contact">Contact</a>
-</nav>
+      <div class="hero-card">
+        <h2>Current Focus</h2>
+        <p>
+          Building mathematical communities through ASCEND, the Math Help Room,
+          online learning, AR visualization, and courses that connect mathematics
+          with human decision-making and the broader liberal arts.
+        </p>
 
-<section id="about">
-  <div class="card">
-    <h2>About</h2>
-    <p>
-      I am an Associate Teaching Professor in the Department of Mathematics
-      at the University of Notre Dame. My work focuses on active learning,
-      student support initiatives, educational technology, and interdisciplinary teaching.
-    </p>
-  </div>
-</section>
+        <!-- 
+        HEADSHOT OPTION:
+        Later, upload a headshot to assets/images/headshot.jpg
+        and replace this hero-card with an image if desired:
+        <img src="assets/images/headshot.jpg" alt="Brian Mulholland" style="width:100%; border-radius:20px;">
+        -->
+      </div>
+    </div>
+  </header>
 
-<section id="projects">
-  <div class="card">
-    <h2>ASCEND</h2>
-    <p>
-      A summer bridge and mentoring program helping students transition into
-      university-level mathematics through coaching, reflection, and community.
-    </p>
-  </div>
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-title">Brian Mulholland</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <div class="card">
-    <h2>AR Calculus III</h2>
-    <p>
-      Augmented reality visualizations for multivariable calculus concepts,
-      helping students interact with 3D mathematical objects.
-    </p>
-  </div>
+  <main>
 
-  <div class="card">
-    <h2>Survivor and Game Theory</h2>
-    <p>
-      Interdisciplinary teaching exploring decision-making, strategy,
-      neuroscience, and mathematics through the lens of Survivor.
-    </p>
-  </div>
-</section>
+    <section id="about">
+      <div class="section-heading">
+        <h2>About</h2>
+        <p>
+          My work centers on helping students encounter mathematics as something
+          meaningful, rigorous, communal, and connected to the rest of their lives.
+        </p>
+      </div>
 
-<section id="teaching">
-  <div class="card">
-    <h2>Teaching</h2>
-    <p>
-      Courses include Calculus, Mathematics in Architecture,
-      Linear Algebra & Differential Equations, and interdisciplinary seminars.
-    </p>
-  </div>
-</section>
+      <div class="two-column">
+        <div class="card">
+          <p>
+            I am an Associate Teaching Professor in the Department of Mathematics
+            at the University of Notre Dame. I teach courses across the calculus
+            sequence and beyond, including mathematics for architecture students,
+            multivariable calculus, linear algebra and differential equations,
+            and interdisciplinary courses connecting mathematics with strategy,
+            decision-making, and human behavior.
+          </p>
 
-<section id="contact">
-  <div class="card">
-    <h2>Contact</h2>
-    <p>
-      Department of Mathematics<br>
-      University of Notre Dame
-    </p>
-  </div>
-</section>
+          <p>
+            Across my teaching and programmatic work, I focus on active learning,
+            inquiry, mentorship, reflection, and the design of structures that help
+            students grow in confidence and mathematical maturity.
+          </p>
+        </div>
 
-<footer>
-  © 2026 Brian Mulholland
-</footer>
+        <div class="card highlight">
+          <h3>Core Themes</h3>
+          <div class="pill-list">
+            <span class="pill">Active Learning</span>
+            <span class="pill">Student Formation</span>
+            <span class="pill">Mathematical Community</span>
+            <span class="pill">Educational Technology</span>
+            <span class="pill">Interdisciplinary Teaching</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Featured Projects</h2>
+        <p>
+          A selection of programs, courses, and initiatives connected to my current
+          work in mathematics education and student support.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card project-card">
+          <h3>ASCEND</h3>
+          <p>
+            A summer bridge and coaching program supporting students as they
+            transition into university-level mathematics through skill-building,
+            mentorship, reflection, and community.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Math Help Room & Booster Shots</h3>
+          <p>
+            Drop-in mathematics support and topic-focused review sessions designed
+            to connect students with timely help, collaborative practice, and
+            course-aligned preparation.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Graduate Teaching Observation Program</h3>
+          <p>
+            A teaching observation partnership designed to support graduate student
+            instructors through structured feedback, reflection, and classroom
+            observation.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>AR Calculus III</h3>
+          <p>
+            Augmented reality tools that allow students to visualize surfaces,
+            curves, vectors, and other multivariable calculus objects in space.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Summer Online Mathematics</h3>
+          <p>
+            Online mathematics courses and instructor development structures
+            focused on interaction, conceptual understanding, and student support.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Survivor & Game Theory</h3>
+          <p>
+            Interdisciplinary teaching and programming using Survivor as a lens
+            for decision-making, strategy, neuroscience, social dynamics, and
+            mathematical reasoning.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>AI and Teaching</h3>
+          <p>
+            Workshops and course design exploring how AI can support learning
+            while preserving student agency, critical thinking, and authentic
+            intellectual work.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Mathematics in Architecture</h3>
+          <p>
+            Course design focused on helping architecture students build mathematical
+            confidence and connect quantitative reasoning with design, physics,
+            and spatial intuition.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Student Support Ecosystems</h3>
+          <p>
+            Program-building work aimed at connecting students with academic
+            resources, peer support, mentoring, and reflective learning practices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="section-heading">
+        <h2>Teaching & Pedagogy</h2>
+        <p>
+          My teaching emphasizes mathematical thinking, active participation,
+          conceptual understanding, and the development of durable study practices.
+        </p>
+      </div>
+
+      <div class="card">
+        <p>
+          I regularly teach and coordinate courses across the mathematics curriculum,
+          including calculus, multivariable calculus, linear algebra and differential
+          equations, and mathematics courses for students in architecture, business,
+          science, and engineering.
+        </p>
+
+        <p>
+          My pedagogical interests include proficiency-based grading, oral exams,
+          inquiry-based learning, reflective assignments, collaborative problem-solving,
+          and the use of digital tools to help students visualize and communicate
+          mathematical ideas.
+        </p>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="section-heading">
+        <h2>Talks, Workshops, and Public Work</h2>
+        <p>
+          I speak and lead workshops on mathematics education, AI and teaching,
+          student formation, active learning, and interdisciplinary approaches to
+          decision-making and strategy.
+        </p>
+      </div>
+
+      <div class="card">
+        <p>
+          Recent areas of focus include teaching in the age of AI, building student
+          support programs, the role of mathematics in the liberal arts, and the
+          connections between game theory, human behavior, and popular culture.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-heading">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          Brian Mulholland<br />
+          Department of Mathematics<br />
+          University of Notre Dame
+        </p>
+
+        <p>
+          Email: <a href="mailto:bmulholland90@gmail.com">bmulholland90@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+  </footer>
 
 </body>
 </html>
