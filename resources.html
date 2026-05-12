@@ -1,1 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Resources | Brian Mulholland</title>
 
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: var(--nd-blue);
+      color: white;
+      padding: 75px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      color: var(--nd-blue);
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+    <div class="eyebrow">Teaching · Review · Student Support</div>
+    <h1>Course Resources</h1>
+    <p class="subtitle">
+      Course-specific resources, review materials, study guidance, and mathematical
+      tools for students in calculus, linear algebra and differential equations,
+      and mathematics for architecture.
+    </p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-title">Brian Mulholland</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#teaching">Teaching</a>
+      <a href="resources.html">Resources</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <div class="section-heading">
+    <h2>Class-Specific Resources</h2>
+    <p>
+      This page will collect course materials and student-facing resources by class.
+      Some sections may begin as placeholders and grow as materials are added.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Calculus I</h3>
+      <p>
+        Resources for limits, derivatives, applications of derivatives, curve
+        sketching, optimization, related rates, and the foundations of integration.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill">Limits</span>
+        <span class="pill">Derivatives</span>
+        <span class="pill">Applications</span>
+        <span class="pill">Review</span>
+      </div>
+
+      <a href="#" class="button-link">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Calculus II</h3>
+      <p>
+        Resources for integration techniques, applications of integration,
+        sequences and series, Taylor polynomials, power series, and exam review.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill">Integration</span>
+        <span class="pill">Series</span>
+        <span class="pill">Taylor Series</span>
+        <span class="pill">Review</span>
+      </div>
+
+      <a href="#" class="button-link">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Calculus III</h3>
+      <p>
+        Resources for vectors, curves, partial derivatives, multiple integrals,
+        vector fields, line integrals, surface integrals, and multivariable
+        visualization.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill">Vectors</span>
+        <span class="pill">Surfaces</span>
+        <span class="pill">Multiple Integrals</span>
+        <span class="pill">Vector Calculus</span>
+      </div>
+
+      <a href="#" class="button-link">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Linear Algebra & Differential Equations</h3>
+      <p>
+        Resources for MATH 20580, including systems of equations, matrices,
+        vector spaces, eigenvalues, linear systems of differential equations,
+        and modeling.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill">MATH 20580</span>
+        <span class="pill">Matrices</span>
+        <span class="pill">Eigenvalues</span>
+        <span class="pill">Differential Equations</span>
+      </div>
+
+      <a href="#" class="button-link">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Mathematics in Architecture</h3>
+      <p>
+        Resources connecting mathematical ideas with architecture, design,
+        geometry, scaling, modeling, physics preparation, and spatial reasoning.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill">Geometry</span>
+        <span class="pill">Modeling</span>
+        <span class="pill">Design</span>
+        <span class="pill">Spatial Reasoning</span>
+      </div>
+
+      <a href="#" class="button-link">Coming Soon</a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
