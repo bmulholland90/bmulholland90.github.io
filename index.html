@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -91,6 +91,29 @@
       margin-bottom: 0;
     }
 
+    .headshot {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--nd-gold);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .hero-photo {
+      text-align: center;
+    }
+
+    .hero-photo p {
+      color: #e9eef5;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+
+    
     nav {
       background: white;
       position: sticky;
@@ -242,14 +265,9 @@
         </p>
       </div>
 
-      <div class="hero-card">
-        <h2>Current Focus</h2>
-        <p>
-          Building mathematical communities through ASCEND, the Math Help Room,
-          online learning, AR visualization, and courses that connect mathematics
-          with human decision-making and the broader liberal arts.
-        </p>
-        <img src="assets/images/headshot.jpg" alt="Brian Mulholland" style="width:100%; border-radius:20px;">
+      <div class="hero-photo">
+        <img src="assets/images/headshot.jpg" alt="Brian Mulholland" class="headshot">
+        <p>Associate Teaching Professor<br>University of Notre Dame</p>
       </div>
     </div>
   </header>
