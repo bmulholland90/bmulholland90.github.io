@@ -132,6 +132,52 @@
       color: white;
     }
 
+
+    .media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.media-card {
+  background: #f6f7f9;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-card h3 {
+  color: var(--nd-blue);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.media-card p {
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.media-label {
+  display: inline-block;
+  width: fit-content;
+  background: var(--nd-gold);
+  color: var(--nd-blue);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
     footer {
       background: var(--nd-blue);
       color: white;
@@ -185,9 +231,13 @@
     <p>
       This work includes the course
       <em>Outwit, Outplay, Outlast: The Dynamics of Survivor</em>,
-      developed with T. M. Vanessa Chan-Devaere, as well as programming
+      developed with <a href="https://psychology.nd.edu/people/faculty/vanessa-chan/">
+  T.M. Vanessa Chan-Devaere
+</a>, as well as programming
       through the Notre Dame Survivor Club.
     </p>
+
+    <a href="#media">News & Media</a>
 
   </div>
 
@@ -300,6 +350,74 @@
     </p>
 
   </div>
+
+  <section id="media">
+  <div class="card">
+    <h2>Notre Dame Survivor in the News & Media</h2>
+
+    <p>
+      Notre Dame Survivor has grown into a broader campus conversation about
+      strategy, decision-making, social dynamics, philosophy, psychology, and
+      mathematics. The links below highlight some of the public-facing work,
+      media coverage, and recorded programming connected to this project.
+    </p>
+
+    <div class="media-grid">
+
+      <div class="media-card">
+        <div class="media-label">Article</div>
+
+        <h3>Studying <em>Survivor</em></h3>
+
+        <p>
+          A Notre Dame Arts & Letters feature on how two Notre Dame courses use
+          <em>Survivor</em> to explore philosophy, psychology, mathematics,
+          decision-making, work, and human behavior.
+        </p>
+
+        <a href="https://al.nd.edu/news/latest-news/studying-em-survivor-em-how-two-notre-dame-courses-apply-reality-tv-to-philosophy-psychology-and-math/"
+           class="button-link">
+          Read Article
+        </a>
+      </div>
+
+      <div class="media-card">
+        <div class="media-label">Article</div>
+
+        <h3>7 Mainers Tell Their <em>Survivor</em> Stories</h3>
+
+        <p>
+          A Portland Press Herald feature on the impact of <em>Survivor</em>,
+          including reflections on the show as a social strategy game built on
+          trust, deception, cooperation, and communal viewing.
+        </p>
+
+        <a href="https://www.pressherald.com/2026/03/18/7-mainers-tell-their-survivor-stories/?uuid=e3694aa6-b716-4cd1-90af-5f07e7c810c4&lid=227097"
+           class="button-link">
+          Read Article
+        </a>
+      </div>
+
+      <div class="media-card">
+        <div class="media-label">Panel Recording</div>
+
+        <h3>Games of Strategy, Games of Self</h3>
+
+        <p>
+          A recorded campus panel with <em>Survivor</em> finalist Xander Hastings
+          exploring what the show reveals about game theory, human behavior,
+          decision-making, and social strategy.
+        </p>
+
+        <a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69a1b19a-15cc-4514-85bc-b410001b6063"
+           class="button-link">
+          Watch Panel
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 </main>
 
