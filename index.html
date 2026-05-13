@@ -166,83 +166,59 @@
 }
 
     
-    nav {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-title {
-      font-weight: 800;
-      color: var(--nd-blue);
-    }
-
-    .nav-links a {
-      margin-left: 18px;
-      font-size: 0.95rem;
-    }
-
-
-
-    .dropdown {
-  display: inline-block;
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
+   nav {
   background: white;
-  min-width: 210px;
-  box-shadow: 0 10px 30px rgba(12, 35, 64, 0.12);
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 10px 0;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.dropdown-content a {
-  display: block;
-  margin: 0;
-  padding: 10px 16px;
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-title {
+  font-weight: 800;
+  color: var(--nd-blue);
+  font-size: 1.05rem;
   white-space: nowrap;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-
-.dropdown {
-  display: block;
+.nav-links a {
+  color: var(--nd-blue);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
 }
 
-.dropdown-content {
-  position: static;
-  display: block;
-  box-shadow: none;
-  border: none;
-  padding: 0;
-  margin-top: 4px;
+.nav-links a:hover {
+  color: var(--nd-gold);
 }
 
-.dropdown-content a {
-  padding: 4px 0;
-  font-size: 0.9rem;
-}
+    @media (max-width: 800px) {
+  .nav-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
+  .nav-links {
+    gap: 14px;
+  }
+}
     
     main {
       max-width: 1100px;
@@ -388,26 +364,20 @@
     </div>
   </header>
 
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-title">Brian Mulholland</div>
-      <div class="nav-links">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
+ <nav>
+  <div class="nav-inner">
+    <div class="nav-title">Brian Mulholland</div>
 
-  <div class="dropdown">
-    <a href="#teaching">Teaching ▾</a>
-    <div class="dropdown-content">
-      <a href="#teaching">Teaching & Pedagogy</a>
-      <a href="resources.html">Course Resources</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
+      <a href="resources.html">Resources</a>
+      <a href="#talks">Talks</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
-
-  <a href="#talks">Talks</a>
-  <a href="#contact">Contact</a>
-</div>
-    </div>
-  </nav>
+</nav>
 
   <main>
 
