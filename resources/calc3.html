@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus III Resources | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: auto;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Multivariable Calculus · Visualization · Calculus III
+    </div>
+
+    <h1>Calculus III Resources</h1>
+
+    <p class="subtitle">
+      Lecture notes, companion videos, and interactive visualization tools
+      for multivariable calculus.
+    </p>
+
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <div class="nav-title">
+      Brian Mulholland
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+  <a href="../resources.html" class="back-link">
+    ← Back to Resources
+  </a>
+
+  <section>
+
+    <div class="card">
+
+      <h2>Course Overview</h2>
+
+      <p>
+        These resources are designed to support students in Calculus III
+        through a combination of lecture notes, companion videos,
+        and interactive visualization tools focused on multivariable thinking.
+      </p>
+
+      <p>
+        A major emphasis of the course is developing geometric intuition
+        and the ability to visualize mathematical objects in three dimensions.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="grid">
+
+      <div class="card resource-card">
+
+        <h3>Lecture Notes</h3>
+
+        <p>
+          Structured lecture notes covering vectors, surfaces,
+          partial derivatives, multiple integrals,
+          vector fields, and vector calculus.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Vectors</span>
+          <span class="pill">Surfaces</span>
+          <span class="pill">Multiple Integrals</span>
+          <span class="pill">Vector Calculus</span>
+        </div>
+
+        <a href="#" class="button-link">
+          Coming Soon
+        </a>
+
+      </div>
+
+      <div class="card resource-card">
+
+        <h3>Companion Videos</h3>
+
+        <p>
+          Supplemental videos designed to accompany lecture material,
+          reinforce conceptual understanding,
+          and provide worked examples.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Worked Examples</span>
+          <span class="pill">Visualization</span>
+          <span class="pill">Conceptual Review</span>
+          <span class="pill">Exam Preparation</span>
+        </div>
+
+        <a href="#" class="button-link">
+          Coming Soon
+        </a>
+
+      </div>
+
+      <div class="card resource-card">
+
+        <h3>AR Visualizer</h3>
+
+        <p>
+          Interactive augmented reality tools allowing students
+          to explore surfaces, curves, vectors,
+          and multivariable objects in physical space.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">AR</span>
+          <span class="pill">3D Geometry</span>
+          <span class="pill">Visualization</span>
+          <span class="pill">Multivariable Thinking</span>
+        </div>
+
+        <a href="#" class="button-link">
+          Coming Soon
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
