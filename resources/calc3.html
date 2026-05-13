@@ -63,6 +63,15 @@
       margin: 0 0 18px;
     }
 
+    h2 {
+      color: var(--nd-blue);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--nd-blue);
+    }
+
     .subtitle {
       font-size: 1.2rem;
       max-width: 760px;
@@ -175,6 +184,55 @@
       margin-bottom: 28px;
     }
 
+    .notes-unit {
+      margin-top: 32px;
+    }
+
+    .notes-unit h3 {
+      color: var(--nd-blue);
+      margin-bottom: 14px;
+    }
+
+    .notes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .note-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f6f7f9;
+    }
+
+    .note-row span:first-child {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .note-row a {
+      background: var(--nd-blue);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .note-row a:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .unavailable {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
     footer {
       background: var(--nd-blue);
       color: white;
@@ -201,6 +259,18 @@
       .nav-links a {
         margin-left: 0;
         margin-right: 14px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .note-row {
+        grid-template-columns: 1fr;
+      }
+
+      .note-row a,
+      .unavailable {
+        display: inline-block;
+        width: fit-content;
       }
     }
   </style>
@@ -249,9 +319,7 @@
   </a>
 
   <section>
-
     <div class="card">
-
       <h2>Course Overview</h2>
 
       <p>
@@ -264,17 +332,13 @@
         A major emphasis of the course is developing geometric intuition
         and the ability to visualize mathematical objects in three dimensions.
       </p>
-
     </div>
-
   </section>
 
   <section>
-
     <div class="grid">
 
       <div class="card resource-card">
-
         <h3>Lecture Notes</h3>
 
         <p>
@@ -290,14 +354,12 @@
           <span class="pill">Vector Calculus</span>
         </div>
 
-        <a href="#" class="button-link">
-          Coming Soon
+        <a href="#lecture-notes" class="button-link">
+          View Lecture Notes
         </a>
-
       </div>
 
       <div class="card resource-card">
-
         <h3>Companion Videos</h3>
 
         <p>
@@ -316,11 +378,9 @@
         <a href="#" class="button-link">
           Coming Soon
         </a>
-
       </div>
 
       <div class="card resource-card">
-
         <h3>AR Visualizer</h3>
 
         <p>
@@ -339,11 +399,82 @@
         <a href="#" class="button-link">
           Coming Soon
         </a>
-
       </div>
 
     </div>
+  </section>
 
+  <section id="lecture-notes">
+    <div class="card">
+
+      <h2>Lecture Notes</h2>
+
+      <p>
+        Student lecture notes and corresponding solution versions organized by unit.
+      </p>
+
+      <div class="notes-unit">
+        <h3>Unit 1: Vectors, Lines, and Planes</h3>
+
+        <div class="notes-list">
+          <div class="note-row"><span>Note 01</span><a href="../assets/files/calc3/notes/calc3-note-01.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-01-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 02</span><a href="../assets/files/calc3/notes/calc3-note-02.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-02-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 03</span><a href="../assets/files/calc3/notes/calc3-note-03.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-03-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 04</span><a href="../assets/files/calc3/notes/calc3-note-04.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-04-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 05</span><span class="unavailable">Student Version Unavailable</span><a href="../assets/files/calc3/notes/calc3-note-05-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 06</span><a href="../assets/files/calc3/notes/calc3-note-06.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-06-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 07</span><a href="../assets/files/calc3/notes/calc3-note-07.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-07-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 08</span><a href="../assets/files/calc3/notes/calc3-note-08.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-08-solutions.pdf">Solutions</a></div>
+        </div>
+      </div>
+
+      <div class="notes-unit">
+        <h3>Unit 2: Curves, Surfaces, and Multivariable Derivatives</h3>
+
+        <div class="notes-list">
+          <div class="note-row"><span>Note 09</span><a href="../assets/files/calc3/notes/calc3-note-09.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-09-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 10</span><a href="../assets/files/calc3/notes/calc3-note-10.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-10-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 11</span><a href="../assets/files/calc3/notes/calc3-note-11.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-11-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 12</span><a href="../assets/files/calc3/notes/calc3-note-12.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-12-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 13</span><a href="../assets/files/calc3/notes/calc3-note-13.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-13-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 14</span><a href="../assets/files/calc3/notes/calc3-note-14.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-14-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 15</span><a href="../assets/files/calc3/notes/calc3-note-15.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-15-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 16</span><a href="../assets/files/calc3/notes/calc3-note-16.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-16-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 17</span><a href="../assets/files/calc3/notes/calc3-note-17.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-17-solutions.pdf">Solutions</a></div>
+        </div>
+      </div>
+
+      <div class="notes-unit">
+        <h3>Unit 3: Multiple Integrals</h3>
+
+        <div class="notes-list">
+          <div class="note-row"><span>Note 18</span><a href="../assets/files/calc3/notes/calc3-note-18.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-18-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 19</span><a href="../assets/files/calc3/notes/calc3-note-19.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-19-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 20</span><a href="../assets/files/calc3/notes/calc3-note-20.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-20-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 21</span><a href="../assets/files/calc3/notes/calc3-note-21.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-21-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 22</span><a href="../assets/files/calc3/notes/calc3-note-22.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-22-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 23</span><span class="unavailable">Student Version Unavailable</span><a href="../assets/files/calc3/notes/calc3-note-23-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 24</span><a href="../assets/files/calc3/notes/calc3-note-24.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-24-solutions.pdf">Solutions</a></div>
+        </div>
+      </div>
+
+      <div class="notes-unit">
+        <h3>Unit 4: Vector Calculus</h3>
+
+        <div class="notes-list">
+          <div class="note-row"><span>Note 25</span><a href="../assets/files/calc3/notes/calc3-note-25.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-25-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 26</span><a href="../assets/files/calc3/notes/calc3-note-26.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-26-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 27</span><a href="../assets/files/calc3/notes/calc3-note-27.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-27-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 28</span><a href="../assets/files/calc3/notes/calc3-note-28.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-28-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Notes 29–30</span><a href="../assets/files/calc3/notes/calc3-note-29-and-30.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-29-and-30-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 31</span><a href="../assets/files/calc3/notes/calc3-note-31.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-31-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 32</span><a href="../assets/files/calc3/notes/calc3-note-32.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-32-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 33</span><a href="../assets/files/calc3/notes/calc3-note-33.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-33-solutions.pdf">Solutions</a></div>
+          <div class="note-row"><span>Note 34</span><a href="../assets/files/calc3/notes/calc3-note-34.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-34-solutions.pdf">Solutions</a></div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
 </main>
