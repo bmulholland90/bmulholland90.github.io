@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATH 20580 Resources | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background:
+        linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      color: var(--nd-blue);
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .topic {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 14px;
+      margin-right: 12px;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Linear Algebra · Differential Equations · MATH 20580
+    </div>
+
+    <h1>MATH 20580 Resources</h1>
+
+    <p class="subtitle">
+      Walkthroughs, videos, review materials, and conceptual resources for
+      Linear Algebra and Differential Equations at the University of Notre Dame.
+    </p>
+
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-title">Brian Mulholland</div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <a href="../resources.html" class="back-link">
+    ← Back to Resources
+  </a>
+
+  <section>
+
+    <div class="card">
+
+      <h2>Course Overview</h2>
+
+      <p>
+        This page collects digital resources for MATH 20580: Linear Algebra and
+        Differential Equations. These materials are designed to support students
+        through worked examples, conceptual walkthroughs, review materials,
+        and video explanations connected to core course topics.
+      </p>
+
+      <p>
+        The goal of these resources is not only to help students solve problems,
+        but also to strengthen conceptual understanding, mathematical communication,
+        and long-term retention.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-heading">
+      <h2>Digital Resources</h2>
+
+      <p>
+        Collections of walkthroughs and recorded explanations covering major
+        topics from the course.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Written Walkthroughs</h3>
+
+        <p>
+          Topic-by-topic walkthroughs and digital explanations designed to help
+          students review concepts, revisit examples, and study independently.
+        </p>
+
+        <div class="topic-list">
+          <span class="topic">Matrices</span>
+          <span class="topic">Systems</span>
+          <span class="topic">Vector Spaces</span>
+          <span class="topic">Eigenvalues</span>
+          <span class="topic">Orthogonality</span>
+          <span class="topic">Differential Equations</span>
+        </div>
+
+        <a href="https://sites.nd.edu/math-digital-resources/20580-2/"
+           class="button-link">
+          Open Walkthroughs
+        </a>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Video Explanations</h3>
+
+        <p>
+          Recorded video explanations and worked examples designed to supplement
+          lectures, office hours, and independent review.
+        </p>
+
+        <div class="topic-list">
+          <span class="topic">Worked Examples</span>
+          <span class="topic">Conceptual Review</span>
+          <span class="topic">Problem Solving</span>
+          <span class="topic">Exam Preparation</span>
+        </div>
+
+        <a href="https://notredame.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=b58bc93d-dab1-4deb-9e25-ae44011cca18"
+           class="button-link">
+          Watch Videos
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="card">
+
+      <h2>Core Topics</h2>
+
+      <div class="topic-list">
+        <span class="topic">Systems of Equations</span>
+        <span class="topic">Matrices</span>
+        <span class="topic">Determinants</span>
+        <span class="topic">Vector Spaces</span>
+        <span class="topic">Basis & Dimension</span>
+        <span class="topic">Linear Transformations</span>
+        <span class="topic">Eigenvalues & Eigenvectors</span>
+        <span class="topic">Orthogonality</span>
+        <span class="topic">Least Squares</span>
+        <span class="topic">Differential Equations</span>
+        <span class="topic">Linear Systems</span>
+        <span class="topic">Modeling</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="card">
+
+      <h2>How to Use These Resources</h2>
+
+      <p>
+        Students often benefit most from these materials when they actively work
+        alongside the examples rather than passively watching or reading.
+      </p>
+
+      <p>
+        Try pausing videos before solutions are revealed, working through examples
+        independently, and comparing your reasoning with the walkthroughs afterward.
+        The goal is to develop both computational fluency and conceptual understanding.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
