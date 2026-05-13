@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talks, Workshops, and Public Work | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      color: var(--nd-blue);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--nd-blue);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 780px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--nd-blue);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--nd-gold);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .theme-card {
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .theme-card h3 {
+      margin-top: 0;
+    }
+
+    .theme-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .talk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .talk-item {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-left: 6px solid var(--nd-gold);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .talk-meta {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .talk-title {
+      color: var(--nd-blue);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .talk-type {
+      display: inline-block;
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .talk-item p {
+      margin-bottom: 0;
+      color: var(--text);
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 900px) {
+      .theme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+    <div class="eyebrow">
+      Talks · Workshops · Public Work
+    </div>
+
+    <h1>Talks, Workshops, and Public Work</h1>
+
+    <p class="subtitle">
+      Presentations, workshops, public lectures, and community-facing work
+      at the intersection of mathematics, teaching, technology, formation,
+      and the Catholic intellectual tradition.
+    </p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-title">Brian Mulholland</div>
+
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#teaching">Teaching</a>
+      <a href="resources.html">Resources</a>
+      <a href="talks.html">Talks</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section>
+    <div class="theme-grid">
+
+      <div class="theme-card">
+        <h3>Mathematics & Formation</h3>
+        <p>
+          Talks exploring how mathematics can shape habits of attention,
+          wonder, reasoning, and human formation.
+        </p>
+      </div>
+
+      <div class="theme-card">
+        <h3>Teaching & Student Success</h3>
+        <p>
+          Workshops and presentations on active learning, alternative grading,
+          belonging, bridge programs, and student-centered course design.
+        </p>
+      </div>
+
+      <div class="theme-card">
+        <h3>Technology, AI, and Learning</h3>
+        <p>
+          Presentations on digital learning, authentic assessment, online
+          pedagogy, and teaching in the age of generative AI.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Selected Talks and Presentations</h2>
+
+      <div class="talk-list">
+
+        <div class="talk-item">
+          <div class="talk-meta">January 2026 · Faith and Reason Day · McGrath Science and Religion Initiative · Lafayette, LA</div>
+          <div class="talk-title">When Parallel Lines Meet: Geometry, Truth, and the God of Order</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            This workshop uses geometry as an entry point into questions of truth, order,
+            and intelligibility. Through familiar mathematical ideas, participants are invited
+            to reflect on how mathematics can reveal patterns of reason, beauty, and structure
+            in creation.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2025 · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">Conference Panel Moderator</div>
+          <span class="talk-type">Public / Professional Service</span>
+          <p>
+            Moderated a conference panel as part of the de Nicola Center for Ethics and
+            Culture Fall Conference, supporting interdisciplinary conversation at the
+            intersection of ethics, culture, theology, philosophy, and public life.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2025 · ND Start Professional Development Series · University of Notre Dame</div>
+          <div class="talk-title">Beyond Teaching: Professional Development and Service Activities</div>
+          <span class="talk-type">Panel Appearance</span>
+          <p>
+            A panel discussion for newer faculty on building a meaningful professional life
+            beyond the classroom, including service, leadership, professional development,
+            and institutional contribution.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2025 · Catholic Scientists Chapter Seminar Series · Saint Vincent College · Latrobe, PA</div>
+          <div class="talk-title">The Mathematical Mind of God</div>
+          <span class="talk-type">Seminar</span>
+          <p>
+            This seminar considers the relationship between mathematics, intelligibility,
+            and Christian faith. It explores how mathematical order can invite reflection
+            on creation, reason, and the ways human beings come to know the world.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2025 · The Science of Mathematics · Mathematics Education at Michigan Two-Year Colleges · Dowagiac, MI</div>
+          <div class="talk-title">Reclaiming Learning: Student-Centered Math Pedagogy</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This talk focuses on student-centered approaches to mathematics teaching,
+            emphasizing active learning, formative feedback, and course structures that help
+            students take ownership of their mathematical growth.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2025 · The Science of Mathematics · Mathematics Education at Michigan Two-Year Colleges · Dowagiac, MI</div>
+          <div class="talk-title">Practical Pathways to Alternative Grading</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            A practical introduction to alternative grading systems in mathematics courses.
+            The talk highlights ways to make assessment more transparent, feedback-oriented,
+            and supportive of long-term learning while remaining manageable for instructors.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2025 · Faith and Reason Day · McGrath Science and Religion Initiative · Lawrence, MA</div>
+          <div class="talk-title">When Parallel Lines Meet: Geometry, Truth, and the God of Order</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            A faith-and-reason workshop using geometric ideas to prompt reflection on order,
+            truth, and the human desire to understand. The session connects mathematical
+            reasoning with broader questions of meaning and creation.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">August 2025 · MathFest · Mathematical Association of America · Sacramento, CA</div>
+          <div class="talk-title">Outwit, Outplay, Outlast: Game-Based Learning through Survivor</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This talk presents Survivor as a framework for interdisciplinary and game-based
+            learning. It explores how strategy, social dynamics, decision-making, and game
+            theory can help students connect mathematical reasoning to human behavior.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">March 2025 · ND Start Professional Development Series · University of Notre Dame</div>
+          <div class="talk-title">Beyond Teaching: Professional Development and Service Activities</div>
+          <span class="talk-type">Panel Appearance</span>
+          <p>
+            A panel conversation on developing a broader faculty identity through service,
+            program-building, collaboration, and professional development.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">2024 · Penn High School · Multidisciplinary Academic Research Society</div>
+          <div class="talk-title">Local Guest High School Speaker</div>
+          <span class="talk-type">Community Talk</span>
+          <p>
+            A community-facing presentation for high school students interested in academic
+            research. The talk introduced students to mathematical work, academic pathways,
+            and the broader possibilities of studying mathematics.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2024 · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">Conference Panel Moderator</div>
+          <span class="talk-type">Public / Professional Service</span>
+          <p>
+            Moderated an interdisciplinary conference panel for the de Nicola Center for
+            Ethics and Culture, helping facilitate public academic conversation across fields.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">April 2024 · OLC Innovate · Online Learning Consortium · Denver, CO</div>
+          <div class="talk-title">Creating a Sense of Belonging Among Incoming First-Year Students Through a Pre-College Online Learning Experience</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This presentation describes how an online pre-college learning experience can
+            support incoming students academically and socially. It focuses on belonging,
+            near-peer support, reflection, and structured preparation for the transition to
+            college-level mathematics.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">March 9, 2024 · Excellence in Teaching Conference · Institute for Educational Initiatives · University of Notre Dame</div>
+          <div class="talk-title">Do Math Like a Champion Today</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            A teaching-focused presentation on building classroom structures that help
+            students engage actively with mathematics, practice productively, and develop
+            confidence through repeated, meaningful participation.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">January 23, 2024 · Moreau Spring Workshop Series · University of Notre Dame</div>
+          <div class="talk-title">Mission in Action</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            This workshop reflects on how Notre Dame’s mission can shape concrete choices
+            in teaching, mentoring, and course design, with attention to the formation of
+            students as whole persons.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 10, 2023 · Teaching in the Age of AI Seminar Series · University of Notre Dame</div>
+          <div class="talk-title">Teaching in the Age of AI: Authentic Assessment</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            A workshop on designing assessments that remain meaningful in an AI-rich
+            learning environment. The session emphasizes authentic tasks, student reasoning,
+            process-oriented work, and assessments that invite students to demonstrate real
+            understanding.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">2023 · Teaching in the Age of AI Seminar Series · University of Notre Dame</div>
+          <div class="talk-title">Teaching in the Age of AI: Authentic Learning</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            A workshop focused on the learning side of generative AI. Rather than treating
+            AI only as a threat to assessment, this session considers how instructors can
+            design learning experiences that preserve student agency, reflection, and
+            intellectual growth.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2023 · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">Conference Panel Moderator</div>
+          <span class="talk-type">Public / Professional Service</span>
+          <p>
+            Moderated a panel for the de Nicola Center for Ethics and Culture Fall Conference,
+            contributing to interdisciplinary public-facing academic dialogue.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2023 · Extending Partnerships: ND-Sidi Pedagogy/Research Workshop · Sidi Abdellah University · Algeria</div>
+          <div class="talk-title">Engaging Students in the Classroom: An Active Learning Approach</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            This workshop introduces active learning strategies for mathematics and STEM
+            classrooms, with attention to student participation, collaborative work, and
+            designing class time around thinking rather than passive reception.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">October 2023 · Extending Partnerships: ND-Sidi Pedagogy/Research Workshop · Sidi Abdellah University · Algeria</div>
+          <div class="talk-title">Research with Undergraduate Students</div>
+          <span class="talk-type">Workshop</span>
+          <p>
+            A workshop on supporting undergraduate students in research settings, including
+            mentoring structures, project design, expectations, and ways to invite students
+            into meaningful scholarly work.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">August 16, 2023 · Teaching in the Age of AI Seminar Series · University of Notre Dame</div>
+          <div class="talk-title">Teaching in the Age of AI Kickoff Panel</div>
+          <span class="talk-type">Panel Appearance</span>
+          <p>
+            A kickoff panel on the implications of generative AI for teaching and learning,
+            with attention to course design, assessment, student use, and the future of
+            authentic academic work.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">March 2023 · Notre Dame Digital Learning Summit · Notre Dame, IN</div>
+          <div class="talk-title">Rising to the Challenge: Creating an Inclusive and Welcoming Learning Experience for Incoming First-Years</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This presentation describes the design of a welcoming online learning experience
+            for incoming first-year students. It emphasizes inclusive course design, community,
+            student transition, and preparation for success in university mathematics.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">February 3, 2023 · Annual Conference on the First-Year Experience and Students in Transition · National Resource Center · Los Angeles, CA</div>
+          <div class="talk-title">Near-Peer Mentoring in a Pre-College STEM Summer Program (ASCEND)</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This talk presents ASCEND’s near-peer mentoring model as a support structure for
+            incoming STEM students. It highlights how coaching, reflection, community, and
+            mathematical preparation can work together during the transition to college.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 10, 2022 · “And It Was Very Good”: On Creation · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">God the Geometer</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This talk explores the theological and philosophical resonance of geometry,
+            considering how mathematical order and spatial reasoning can illuminate broader
+            questions about creation, intelligibility, and the human search for truth.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2022 · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">Conference Panel Moderator</div>
+          <span class="talk-type">Public / Professional Service</span>
+          <p>
+            Moderated a conference panel for the de Nicola Center for Ethics and Culture,
+            contributing to public academic conversation rooted in Notre Dame’s intellectual
+            tradition.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 5, 2021 · Association for Educational Communications and Technology Conference · Chicago, IL</div>
+          <div class="talk-title">Flexible Assessment in Math During and After COVID</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This presentation examines flexible assessment practices developed during the
+            disruptions of COVID and considers what can be retained afterward. It focuses on
+            mastery, feedback, student support, and assessment systems that better promote
+            learning.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">June 10, 2021 · Notre Dame Board of Trustees Summer Meeting · University of Notre Dame</div>
+          <div class="talk-title">Enhancing Learning with Low-Stakes Assessment & Mastery Grading in Math During COVID</div>
+          <span class="talk-type">Internal Presentation</span>
+          <p>
+            An internal presentation on using low-stakes assessment and mastery grading to
+            support student learning during COVID-era teaching. The presentation highlights
+            feedback cycles, flexibility, and structures that help students persist.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">November 2021 · de Nicola Center for Ethics and Culture Fall Conference · Notre Dame, IN</div>
+          <div class="talk-title">Conference Panel Moderator</div>
+          <span class="talk-type">Public / Professional Service</span>
+          <p>
+            Moderated a conference panel for the de Nicola Center for Ethics and Culture,
+            helping support interdisciplinary public discussion.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">June 15, 2020 · OLC Innovate · Online Learning Consortium · Online</div>
+          <div class="talk-title">Your Mission Should You Choose To Accept It: How a Futuristic Narrative Framework Helped to Increase Math Discourse and Engagement in an Online Undergraduate Course</div>
+          <span class="talk-type">Conference Talk</span>
+          <p>
+            This presentation describes how a narrative framework can increase student
+            engagement and mathematical discourse in an online undergraduate course. It
+            focuses on course storytelling, student motivation, and designing online learning
+            experiences that invite participation.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">2020 · Math Circles</div>
+          <div class="talk-title">Math Circles Coordination</div>
+          <span class="talk-type">Community Work</span>
+          <p>
+            Coordinated Math Circles programming for K–12 students, supporting lively and
+            interactive mathematical problem solving through activities with a low threshold
+            and high ceiling.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Additional Public and Community Work</h2>
+
+      <div class="talk-list">
+
+        <div class="talk-item">
+          <div class="talk-meta">2024–Present · Good Shepherd Montessori School</div>
+          <div class="talk-title">Chess Club Coach</div>
+          <span class="talk-type">Community Work</span>
+          <p>
+            Organize regular practice sessions and interactive lessons for young chess players,
+            using chess as a setting for reasoning, patience, pattern recognition, and joyful
+            problem solving.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">2021–Present · University of Notre Dame</div>
+          <div class="talk-title">Faculty Pep Talks</div>
+          <span class="talk-type">Public / Student Formation</span>
+          <p>
+            Visit undergraduate dorms to speak with first-year students about preparing for
+            college life, developing healthy habits, and approaching academic challenges with
+            confidence and purpose.
+          </p>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta">2021–Present · University of Notre Dame</div>
+          <div class="talk-title">Sorin Supper Club</div>
+          <span class="talk-type">Student Formation</span>
+          <p>
+            Host students for meals and conversation about the relationship between family,
+            work, vocation, and life at Notre Dame.
+          </p>
+        </div>
+
+      </div>
+
+      <a href="assets/files/cv.pdf" class="button-link">
+        View Full CV
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
