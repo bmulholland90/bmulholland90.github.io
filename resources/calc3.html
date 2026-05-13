@@ -184,13 +184,60 @@
       margin-bottom: 28px;
     }
 
-    .notes-unit {
-      margin-top: 32px;
+    .accordion {
+      margin-top: 28px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: white;
     }
 
-    .notes-unit h3 {
+    details {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    details:last-child {
+      border-bottom: none;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 22px;
+      background: #ffffff;
       color: var(--nd-blue);
-      margin-bottom: 14px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--nd-gold);
+      font-weight: 800;
+    }
+
+    details[open] summary::after {
+      content: "–";
+    }
+
+    details[open] summary {
+      background: #f8fafc;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .unit-content {
+      padding: 18px;
+      background: #ffffff;
     }
 
     .notes-list {
@@ -201,15 +248,15 @@
 
     .note-row {
       display: grid;
-      grid-template-columns: 1fr auto auto;
+      grid-template-columns: minmax(240px, 1fr) auto auto;
       gap: 12px;
       align-items: center;
-      padding: 12px 14px;
+      padding: 14px 16px;
       border-radius: 12px;
       background: #f6f7f9;
     }
 
-    .note-row span:first-child {
+    .topic-title {
       font-weight: 800;
       color: var(--nd-blue);
     }
@@ -220,6 +267,8 @@
       padding: 8px 12px;
       border-radius: 8px;
       font-size: 0.9rem;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .note-row a:hover {
@@ -231,6 +280,7 @@
       color: var(--muted);
       font-size: 0.9rem;
       font-style: italic;
+      white-space: nowrap;
     }
 
     footer {
@@ -271,6 +321,10 @@
       .unavailable {
         display: inline-block;
         width: fit-content;
+      }
+
+      summary {
+        align-items: flex-start;
       }
     }
   </style>
@@ -411,67 +465,259 @@
 
       <p>
         Student lecture notes and corresponding solution versions organized by unit.
+        Click a unit below to expand the topic list.
       </p>
 
-      <div class="notes-unit">
-        <h3>Unit 1: Vectors, Lines, and Planes</h3>
+      <div class="accordion">
 
-        <div class="notes-list">
-          <div class="note-row"><span>Note 01</span><a href="../assets/files/calc3/notes/calc3-note-01.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-01-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 02</span><a href="../assets/files/calc3/notes/calc3-note-02.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-02-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 03</span><a href="../assets/files/calc3/notes/calc3-note-03.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-03-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 04</span><a href="../assets/files/calc3/notes/calc3-note-04.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-04-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 05</span><span class="unavailable">Student Version Unavailable</span><a href="../assets/files/calc3/notes/calc3-note-05-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 06</span><a href="../assets/files/calc3/notes/calc3-note-06.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-06-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 07</span><a href="../assets/files/calc3/notes/calc3-note-07.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-07-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 08</span><a href="../assets/files/calc3/notes/calc3-note-08.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-08-solutions.pdf">Solutions</a></div>
-        </div>
-      </div>
+        <details open>
+          <summary>Unit 1: Vectors and Geometry of Space</summary>
 
-      <div class="notes-unit">
-        <h3>Unit 2: Curves, Surfaces, and Multivariable Derivatives</h3>
+          <div class="unit-content">
+            <div class="notes-list">
 
-        <div class="notes-list">
-          <div class="note-row"><span>Note 09</span><a href="../assets/files/calc3/notes/calc3-note-09.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-09-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 10</span><a href="../assets/files/calc3/notes/calc3-note-10.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-10-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 11</span><a href="../assets/files/calc3/notes/calc3-note-11.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-11-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 12</span><a href="../assets/files/calc3/notes/calc3-note-12.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-12-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 13</span><a href="../assets/files/calc3/notes/calc3-note-13.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-13-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 14</span><a href="../assets/files/calc3/notes/calc3-note-14.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-14-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 15</span><a href="../assets/files/calc3/notes/calc3-note-15.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-15-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 16</span><a href="../assets/files/calc3/notes/calc3-note-16.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-16-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 17</span><a href="../assets/files/calc3/notes/calc3-note-17.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-17-solutions.pdf">Solutions</a></div>
-        </div>
-      </div>
+              <div class="note-row">
+                <span class="topic-title">Topic 01: 3D Coordinates and Vectors</span>
+                <a href="../assets/files/calc3/notes/calc3-note-01.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-01-solutions.pdf">Solutions</a>
+              </div>
 
-      <div class="notes-unit">
-        <h3>Unit 3: Multiple Integrals</h3>
+              <div class="note-row">
+                <span class="topic-title">Topic 02: Dot and Cross Products</span>
+                <a href="../assets/files/calc3/notes/calc3-note-02.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-02-solutions.pdf">Solutions</a>
+              </div>
 
-        <div class="notes-list">
-          <div class="note-row"><span>Note 18</span><a href="../assets/files/calc3/notes/calc3-note-18.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-18-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 19</span><a href="../assets/files/calc3/notes/calc3-note-19.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-19-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 20</span><a href="../assets/files/calc3/notes/calc3-note-20.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-20-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 21</span><a href="../assets/files/calc3/notes/calc3-note-21.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-21-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 22</span><a href="../assets/files/calc3/notes/calc3-note-22.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-22-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 23</span><span class="unavailable">Student Version Unavailable</span><a href="../assets/files/calc3/notes/calc3-note-23-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 24</span><a href="../assets/files/calc3/notes/calc3-note-24.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-24-solutions.pdf">Solutions</a></div>
-        </div>
-      </div>
+              <div class="note-row">
+                <span class="topic-title">Topic 03: Lines in Space</span>
+                <a href="../assets/files/calc3/notes/calc3-note-03.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-03-solutions.pdf">Solutions</a>
+              </div>
 
-      <div class="notes-unit">
-        <h3>Unit 4: Vector Calculus</h3>
+              <div class="note-row">
+                <span class="topic-title">Topic 04: Planes in Space</span>
+                <a href="../assets/files/calc3/notes/calc3-note-04.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-04-solutions.pdf">Solutions</a>
+              </div>
 
-        <div class="notes-list">
-          <div class="note-row"><span>Note 25</span><a href="../assets/files/calc3/notes/calc3-note-25.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-25-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 26</span><a href="../assets/files/calc3/notes/calc3-note-26.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-26-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 27</span><a href="../assets/files/calc3/notes/calc3-note-27.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-27-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 28</span><a href="../assets/files/calc3/notes/calc3-note-28.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-28-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Notes 29–30</span><a href="../assets/files/calc3/notes/calc3-note-29-and-30.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-29-and-30-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 31</span><a href="../assets/files/calc3/notes/calc3-note-31.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-31-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 32</span><a href="../assets/files/calc3/notes/calc3-note-32.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-32-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 33</span><a href="../assets/files/calc3/notes/calc3-note-33.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-33-solutions.pdf">Solutions</a></div>
-          <div class="note-row"><span>Note 34</span><a href="../assets/files/calc3/notes/calc3-note-34.pdf">Student Version</a><a href="../assets/files/calc3/notes/calc3-note-34-solutions.pdf">Solutions</a></div>
-        </div>
+              <div class="note-row">
+                <span class="topic-title">Topic 05: Common Surfaces</span>
+                <span class="unavailable">Student Version Unavailable</span>
+                <a href="../assets/files/calc3/notes/calc3-note-05-solutions.pdf">Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Unit 2: Space Curves and Multivariable Functions</summary>
+
+          <div class="unit-content">
+            <div class="notes-list">
+
+              <div class="note-row">
+                <span class="topic-title">Topic 06: Space Curves</span>
+                <a href="../assets/files/calc3/notes/calc3-note-06.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-06-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 07: Calculus of Space Curves</span>
+                <a href="../assets/files/calc3/notes/calc3-note-07.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-07-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 08: Arc Length and Curvature</span>
+                <a href="../assets/files/calc3/notes/calc3-note-08.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-08-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 09: Motion in Space</span>
+                <a href="../assets/files/calc3/notes/calc3-note-09.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-09-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 10: Functions of Several Variables</span>
+                <a href="../assets/files/calc3/notes/calc3-note-10.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-10-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 11: Partial Derivatives</span>
+                <a href="../assets/files/calc3/notes/calc3-note-11.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-11-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 12: Directional Derivatives</span>
+                <a href="../assets/files/calc3/notes/calc3-note-12.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-12-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 13: Applications of the Gradient</span>
+                <a href="../assets/files/calc3/notes/calc3-note-13.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-13-solutions.pdf">Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Unit 3: Optimization and Multiple Integrals</summary>
+
+          <div class="unit-content">
+            <div class="notes-list">
+
+              <div class="note-row">
+                <span class="topic-title">Topic 14: Local Maximums and Minimums</span>
+                <a href="../assets/files/calc3/notes/calc3-note-14.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-14-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 15: Absolute Maximums and Minimums</span>
+                <a href="../assets/files/calc3/notes/calc3-note-15.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-15-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 16: Lagrange Multipliers</span>
+                <a href="../assets/files/calc3/notes/calc3-note-16.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-16-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 17: Lagrange Multipliers with Two Constraints</span>
+                <a href="../assets/files/calc3/notes/calc3-note-17.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-17-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 18: Double Integrals over Rectangular and General Regions</span>
+                <a href="../assets/files/calc3/notes/calc3-note-18.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-18-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 19: Double Integrals in Polar Coordinates</span>
+                <a href="../assets/files/calc3/notes/calc3-note-19.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-19-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 20: Introduction to Triple Integrals</span>
+                <a href="../assets/files/calc3/notes/calc3-note-20.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-20-solutions.pdf">Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Unit 4: Coordinate Systems, Change of Variables, and Applications</summary>
+
+          <div class="unit-content">
+            <div class="notes-list">
+
+              <div class="note-row">
+                <span class="topic-title">Topic 21: Triple Integrals in Cylindrical Coordinates</span>
+                <a href="../assets/files/calc3/notes/calc3-note-21.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-21-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 22: Triple Integrals in Spherical Coordinates</span>
+                <a href="../assets/files/calc3/notes/calc3-note-22.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-22-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 23: Applications with Mass</span>
+                <span class="unavailable">Student Version Unavailable</span>
+                <a href="../assets/files/calc3/notes/calc3-note-23-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 24: Change of Variables</span>
+                <a href="../assets/files/calc3/notes/calc3-note-24.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-24-solutions.pdf">Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Unit 5: Vector Fields and Vector Calculus Theorems</summary>
+
+          <div class="unit-content">
+            <div class="notes-list">
+
+              <div class="note-row">
+                <span class="topic-title">Topic 25: Vector Fields and Line Integrals</span>
+                <a href="../assets/files/calc3/notes/calc3-note-25.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-25-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 26: Fundamental Theorem of Line Integrals</span>
+                <a href="../assets/files/calc3/notes/calc3-note-26.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-26-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 27: Green’s Theorem</span>
+                <a href="../assets/files/calc3/notes/calc3-note-27.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-27-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 28: Curl and Divergence</span>
+                <a href="../assets/files/calc3/notes/calc3-note-28.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-28-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topics 29–30: Parametric Surfaces</span>
+                <a href="../assets/files/calc3/notes/calc3-note-29-and-30.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-29-and-30-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 31: Surface Integrals</span>
+                <a href="../assets/files/calc3/notes/calc3-note-31.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-31-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 32: Flux Integrals</span>
+                <a href="../assets/files/calc3/notes/calc3-note-32.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-32-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 33: Stokes’ Theorem</span>
+                <a href="../assets/files/calc3/notes/calc3-note-33.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-33-solutions.pdf">Solutions</a>
+              </div>
+
+              <div class="note-row">
+                <span class="topic-title">Topic 34: The Divergence Theorem</span>
+                <a href="../assets/files/calc3/notes/calc3-note-34.pdf">Student Version</a>
+                <a href="../assets/files/calc3/notes/calc3-note-34-solutions.pdf">Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </details>
+
       </div>
 
     </div>
