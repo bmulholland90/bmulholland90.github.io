@@ -38,8 +38,7 @@
     }
 
     header {
-      background:
-        linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
       color: white;
       padding: 80px 24px;
     }
@@ -152,11 +151,18 @@
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 700;
+      display: inline-block;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .topic:hover {
+      background: var(--nd-gold);
+      color: white;
     }
 
     .button-link {
       display: inline-block;
-      margin-top: 14px;
+      margin-top: 18px;
       margin-right: 12px;
       background: var(--nd-blue);
       color: white;
@@ -210,7 +216,6 @@
 
 <header>
   <div class="hero-inner">
-
     <div class="eyebrow">
       Linear Algebra · Differential Equations · MATH 20580
     </div>
@@ -218,10 +223,9 @@
     <h1>MATH 20580 Resources</h1>
 
     <p class="subtitle">
-      Walkthroughs, videos, review materials, and conceptual resources for
-      Linear Algebra and Differential Equations at the University of Notre Dame.
+      Interactive walkthroughs, recorded office hours, review materials, and
+      conceptual resources for Linear Algebra and Differential Equations.
     </p>
-
   </div>
 </header>
 
@@ -245,16 +249,14 @@
   </a>
 
   <section>
-
     <div class="card">
-
       <h2>Course Overview</h2>
 
       <p>
         This page collects digital resources for MATH 20580: Linear Algebra and
-        Differential Equations. These materials are designed to support students
-        through worked examples, conceptual walkthroughs, review materials,
-        and video explanations connected to core course topics.
+        Differential Equations. These materials include interactive walkthroughs,
+        embedded explanations, audio-supported resources, recorded office hours,
+        and review videos connected to core course topics.
       </p>
 
       <p>
@@ -262,80 +264,97 @@
         but also to strengthen conceptual understanding, mathematical communication,
         and long-term retention.
       </p>
-
     </div>
-
   </section>
 
   <section>
-
     <div class="section-heading">
       <h2>Digital Resources</h2>
 
       <p>
-        Collections of walkthroughs and recorded explanations covering major
-        topics from the course.
+        Use the links below to access interactive course walkthroughs and recorded
+        office hours for major topics in Linear Algebra and Differential Equations.
       </p>
     </div>
 
     <div class="grid">
 
       <div class="card">
-
-        <h3>Written Walkthroughs</h3>
+        <h3>Interactive Course Walkthroughs</h3>
 
         <p>
-          Topic-by-topic walkthroughs and digital explanations designed to help
-          students review concepts, revisit examples, and study independently.
+          Interactive walkthroughs, guided explanations, examples, videos,
+          and audio-supported resources covering major concepts from
+          Linear Algebra and Differential Equations.
         </p>
 
         <div class="topic-list">
-          <span class="topic">Matrices</span>
-          <span class="topic">Systems</span>
-          <span class="topic">Vector Spaces</span>
-          <span class="topic">Eigenvalues</span>
-          <span class="topic">Orthogonality</span>
-          <span class="topic">Differential Equations</span>
+
+          <a class="topic"
+             href="https://math24580-linear-algebra-2019.s3.amazonaws.com/Rise+Pages/WEEK00/Systems_of_equations/content/index.html#/">
+            Systems of Equations
+          </a>
+
+          <a class="topic"
+             href="https://math24580-linear-algebra-2019.s3.amazonaws.com/Rise+Pages/WEEK01/Matrices/content/index.html#/">
+            Matrices
+          </a>
+
+          <a class="topic"
+             href="https://math24580-linear-algebra-2019.s3.amazonaws.com/Rise+Pages/WEEK02/Vector_Spaces/content/index.html#/">
+            Vector Spaces
+          </a>
+
+          <a class="topic"
+             href="https://math24580-linear-algebra-2019.s3.amazonaws.com/Rise+Pages/WEEK05/Eigenvalues/content/index.html#/">
+            Eigenvalues
+          </a>
+
+          <a class="topic"
+             href="https://math24580-linear-algebra-2019.s3.amazonaws.com/Rise+Pages/WEEK06/Orthogonality/content/index.html#/">
+            Orthogonality
+          </a>
+
+          <a class="topic"
+             href="https://math24580-differential-equations.s3.amazonaws.com/Rise+Pages/FirstOrderDifferentialEquations/content/index.html#/">
+            Differential Equations
+          </a>
+
         </div>
 
         <a href="https://sites.nd.edu/math-digital-resources/20580-2/"
            class="button-link">
-          Open Walkthroughs
+          Full Resource Collection
         </a>
-
       </div>
 
       <div class="card">
-
-        <h3>Video Explanations</h3>
+        <h3>Recorded Office Hours & Review Videos</h3>
 
         <p>
-          Recorded video explanations and worked examples designed to supplement
-          lectures, office hours, and independent review.
+          Recorded office hours, review sessions, worked examples, and
+          supplemental video explanations connected to major course topics
+          and exam preparation.
         </p>
 
         <div class="topic-list">
+          <span class="topic">Office Hours</span>
           <span class="topic">Worked Examples</span>
           <span class="topic">Conceptual Review</span>
-          <span class="topic">Problem Solving</span>
           <span class="topic">Exam Preparation</span>
         </div>
 
         <a href="https://notredame.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=b58bc93d-dab1-4deb-9e25-ae44011cca18"
            class="button-link">
-          Watch Videos
+          Open Panopto Folder
         </a>
-
       </div>
 
     </div>
-
   </section>
 
   <section>
-
     <div class="card">
-
       <h2>Core Topics</h2>
 
       <div class="topic-list">
@@ -348,19 +367,15 @@
         <span class="topic">Eigenvalues & Eigenvectors</span>
         <span class="topic">Orthogonality</span>
         <span class="topic">Least Squares</span>
-        <span class="topic">Differential Equations</span>
+        <span class="topic">First-Order Differential Equations</span>
         <span class="topic">Linear Systems</span>
         <span class="topic">Modeling</span>
       </div>
-
     </div>
-
   </section>
 
   <section>
-
     <div class="card">
-
       <h2>How to Use These Resources</h2>
 
       <p>
@@ -373,9 +388,7 @@
         independently, and comparing your reasoning with the walkthroughs afterward.
         The goal is to develop both computational fluency and conceptual understanding.
       </p>
-
     </div>
-
   </section>
 
 </main>
