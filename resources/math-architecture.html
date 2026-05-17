@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematics in Architecture | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      color: var(--nd-blue);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--nd-blue);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 800px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: auto;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .quote-card {
+      border-left: 6px solid var(--nd-gold);
+      background: #ffffff;
+    }
+
+    .quote-card p {
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .three-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Geometry · Structure · Beauty · Design
+    </div>
+
+    <h1>Mathematics in Architecture</h1>
+
+    <p class="subtitle">
+      A course about how mathematical ideas become visible in buildings,
+      structures, patterns, and space.
+    </p>
+
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <div class="nav-title">
+      Brian Mulholland
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../resources.html">Resources</a>
+      <a href="#course-idea">Course Idea</a>
+      <a href="#themes">Themes</a>
+      <a href="#student-work">Student Work</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+  <a href="../resources.html" class="back-link">
+    ← Back to Resources
+  </a>
+
+  <section id="course-idea">
+    <div class="card">
+      <h2>Course Idea</h2>
+
+      <p>
+        Mathematics in Architecture is a course for students who want to see
+        mathematics not only as a set of techniques, but as a way of noticing,
+        describing, and understanding the built world.
+      </p>
+
+      <p>
+        The course studies significant buildings and architectural traditions
+        through the mathematical ideas that help explain their beauty, structure,
+        and design. Students encounter geometry, proportion, symmetry, forces,
+        equilibrium, coordinates, and modeling in conversation with architecture
+        from the ancient world to the modern era.
+      </p>
+
+      <p>
+        The goal is not simply to use buildings as examples of mathematics.
+        Rather, the course asks how architecture can make mathematical ideas
+        visible, and how mathematics can deepen our appreciation for architecture.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card quote-card">
+      <h2>Why Architecture?</h2>
+
+      <p>
+        Architecture is one of the places where abstract mathematics becomes
+        concrete. A curve becomes an arch. A symmetry becomes a pattern. A
+        proportion becomes a room that feels ordered. A force diagram becomes
+        a building that stands.
+      </p>
+
+      <p>
+        In this course, mathematics is approached as a human activity: something
+        connected to history, culture, beauty, experiment, intuition, and design.
+      </p>
+    </div>
+  </section>
+
+  <section id="themes">
+    <div class="three-grid">
+
+      <div class="card resource-card">
+        <h3>Geometry and Proportion</h3>
+
+        <p>
+          Students study how geometric ideas shape architectural design, from
+          classical constructions and proportion to perspective and spatial
+          reasoning.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Euclidean Geometry</span>
+          <span class="pill">Proportion</span>
+          <span class="pill">Perspective</span>
+        </div>
+      </div>
+
+      <div class="card resource-card">
+        <h3>Structure and Forces</h3>
+
+        <p>
+          Buildings must not only look beautiful; they must stand. The course
+          uses mathematical models to understand arches, domes, trusses, and
+          equilibrium.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Forces</span>
+          <span class="pill">Equilibrium</span>
+          <span class="pill">Arches and Domes</span>
+        </div>
+      </div>
+
+      <div class="card resource-card">
+        <h3>Pattern and Symmetry</h3>
+
+        <p>
+          Symmetry offers a bridge between mathematical structure and visual
+          design, especially in architectural traditions that use repetition,
+          transformation, and ornament.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Symmetry</span>
+          <span class="pill">Pattern</span>
+          <span class="pill">Design</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Historical Arc</h2>
+
+      <p>
+        The course follows a broad historical path, using major architectural
+        examples to introduce mathematical ideas in context.
+      </p>
+
+      <ul class="feature-list">
+        <li>
+          Greek geometry and the Parthenon
+        </li>
+
+        <li>
+          Roman arches, forces, and the Pantheon
+        </li>
+
+        <li>
+          Symmetry and Islamic architecture
+        </li>
+
+        <li>
+          Romanesque and Gothic structures, trusses, and cathedrals
+        </li>
+
+        <li>
+          Coordinates, three-dimensional thinking, and the Duomo of Florence
+        </li>
+
+        <li>
+          Renaissance proportion, perspective, Palladio’s villas, and St. Peter’s
+        </li>
+
+        <li>
+          Modern arches and domes, including Hooke’s principle and structural models
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="student-work">
+    <div class="grid">
+
+      <div class="card resource-card">
+        <h3>How Students Learn</h3>
+
+        <p>
+          Students work through mathematical ideas by solving problems, discussing
+          buildings, reflecting on their learning, and connecting abstract ideas
+          to physical spaces.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Problem Solving</span>
+          <span class="pill">Reflection</span>
+          <span class="pill">Discussion</span>
+          <span class="pill">Revision</span>
+        </div>
+      </div>
+
+      <div class="card resource-card">
+        <h3>Projects and Reflection</h3>
+
+        <p>
+          The course includes opportunities for students to investigate buildings,
+          communicate mathematical ideas clearly, and reflect on how their
+          understanding develops over time.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Historical Paper</span>
+          <span class="pill">Portfolio</span>
+          <span class="pill">Student Choice</span>
+          <span class="pill">Mathematical Communication</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>A Different Kind of Mathematics Course</h2>
+
+      <p>
+        Mathematics in Architecture is designed especially for students who may
+        not initially see themselves as “math people.” The course emphasizes
+        curiosity, careful observation, communication, and the ability to connect
+        mathematical thinking with human creativity.
+      </p>
+
+      <p>
+        Students are invited to take intellectual risks, revise their thinking,
+        and focus on understanding rather than simply chasing points. The aim is
+        for students to leave the course with a deeper appreciation for both
+        mathematics and the built world.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
