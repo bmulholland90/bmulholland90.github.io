@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus II Resources | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      color: var(--nd-blue);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--nd-blue);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: auto;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Calculus II · Integration · Series · Exam Review
+    </div>
+
+    <h1>Calculus II Resources</h1>
+
+    <p class="subtitle">
+      Lecture notes and practice-exam video resources for students studying
+      integration techniques, applications of integration, sequences, series,
+      and Taylor series.
+    </p>
+
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <div class="nav-title">
+      Brian Mulholland
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../resources.html">Resources</a>
+      <a href="#notes">Notes</a>
+      <a href="#videos">Videos</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+  <a href="../resources.html" class="back-link">
+    ← Back to Resources
+  </a>
+
+  <section>
+    <div class="card">
+      <h2>Course Overview</h2>
+
+      <p>
+        These resources are designed to support students in Calculus II,
+        especially as they develop fluency with integration techniques,
+        applications of integration, sequences and series, power series,
+        and Taylor series.
+      </p>
+
+      <p>
+        The lecture notes provide a structured written resource for the course,
+        while the video collection gives additional practice with older exam-style
+        problems.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid">
+
+      <div class="card resource-card" id="notes">
+        <h3>Lecture Notes</h3>
+
+        <p>
+          A complete set of blank Calculus II lecture notes collected in a single
+          PDF. These notes are intended for students to use actively while working
+          through examples, definitions, and major course ideas.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Blank Notes</span>
+          <span class="pill">Integration</span>
+          <span class="pill">Applications</span>
+          <span class="pill">Series</span>
+        </div>
+
+        <a href="../assets/files/calc2/calc2-lecture-notes.pdf" class="button-link">
+          Open Lecture Notes
+        </a>
+      </div>
+
+      <div class="card resource-card" id="videos">
+        <h3>Practice Exam Videos</h3>
+
+        <p>
+          A collection of older short videos focused on practice exam problems.
+          These are useful for targeted review, especially when students want to
+          see additional worked examples.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Practice Exams</span>
+          <span class="pill">Worked Problems</span>
+          <span class="pill">Short Videos</span>
+          <span class="pill">Review</span>
+        </div>
+
+        <a href="https://drive.google.com/drive/folders/0B78dV-yPWEtTclJxejUwRlVLWjQ?resourcekey=0-WPqWfbC3pfleEwwx_bIXnw&usp=sharing" class="button-link">
+          View Practice Videos
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>How to Use These Resources</h2>
+
+      <ul class="feature-list">
+        <li>
+          Use the blank lecture notes while working through class material,
+          filling in definitions, examples, and explanations as you go.
+        </li>
+
+        <li>
+          Use the practice exam videos after attempting problems on your own.
+          The videos are most helpful when they become a way to check and refine
+          your reasoning, rather than a substitute for first attempting the work.
+        </li>
+
+        <li>
+          For exam preparation, focus on recognizing problem types, choosing an
+          appropriate method, and explaining why that method applies.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
