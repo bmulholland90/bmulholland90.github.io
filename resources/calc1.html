@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus I Resources | Brian Mulholland</title>
+
+  <style>
+    :root {
+      --nd-blue: #0C2340;
+      --nd-gold: #C99700;
+      --light-bg: #f6f7f9;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--nd-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: var(--nd-gold);
+    }
+
+    header {
+      background: linear-gradient(rgba(12, 35, 64, 0.94), rgba(12, 35, 64, 0.94));
+      color: white;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--nd-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      color: var(--nd-blue);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--nd-blue);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #e9eef5;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: var(--nd-blue);
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+      border: 1px solid #edf0f4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card h3 {
+      color: var(--nd-blue);
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      background: #eef2f7;
+      color: var(--nd-blue);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: auto;
+      background: var(--nd-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .button-link:hover {
+      background: var(--nd-gold);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .note-box {
+      background: #eef2f7;
+      border-left: 5px solid var(--nd-gold);
+      border-radius: 14px;
+      padding: 18px 20px;
+      color: var(--text);
+      margin-top: 22px;
+    }
+
+    .note-box strong {
+      color: var(--nd-blue);
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--nd-blue);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #e9eef5;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Calculus I · Limits · Derivatives · Applications
+    </div>
+
+    <h1>Calculus I Resources</h1>
+
+    <p class="subtitle">
+      Introduction and example videos for students studying limits, derivatives,
+      applications of derivatives, and the foundations of integral calculus.
+    </p>
+
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <div class="nav-title">
+      Brian Mulholland
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../resources.html">Resources</a>
+      <a href="#videos">Videos</a>
+      <a href="#study-guidance">Study Guidance</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+  <a href="../resources.html" class="back-link">
+    ← Back to Resources
+  </a>
+
+  <section>
+    <div class="card">
+      <h2>Course Overview</h2>
+
+      <p>
+        These resources are designed to support students in Calculus I as they
+        build a foundation in limits, derivatives, applications of derivatives,
+        and the early ideas of integration.
+      </p>
+
+      <p>
+        The video collection includes introductions to key ideas as well as
+        worked examples. Many of the videos include built-in questions to help
+        students check their understanding as they watch.
+      </p>
+
+      <div class="note-box">
+        <strong>Notre Dame login required:</strong>
+        These videos are hosted through Notre Dame Panopto and include embedded
+        questions to test understanding. Students will need to log in with their
+        Notre Dame credentials to access the collection.
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="grid">
+
+      <div class="card resource-card">
+        <h3>Introduction and Example Videos</h3>
+
+        <p>
+          A collection of Calculus I videos that introduce major course concepts
+          and work through examples. The built-in questions are designed to help
+          students pause, reflect, and test their understanding while watching.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Concept Introductions</span>
+          <span class="pill">Worked Examples</span>
+          <span class="pill">Embedded Questions</span>
+          <span class="pill">ND Login Required</span>
+        </div>
+
+        <a href="https://notredame.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=9df9a8c5-a90a-416c-b247-b2e500dd12d6" class="button-link">
+          View Video Collection
+        </a>
+      </div>
+
+      <div class="card resource-card">
+        <h3>Topics Covered</h3>
+
+        <p>
+          The videos are intended to support the central ideas of a first course
+          in calculus, with an emphasis on understanding concepts and practicing
+          common problem types.
+        </p>
+
+        <div class="pill-list">
+          <span class="pill">Limits</span>
+          <span class="pill">Continuity</span>
+          <span class="pill">Derivatives</span>
+          <span class="pill">Applications</span>
+          <span class="pill">Optimization</span>
+          <span class="pill">Related Rates</span>
+          <span class="pill">Integration</span>
+        </div>
+
+        <a href="#study-guidance" class="button-link">
+          How to Use These Videos
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="study-guidance">
+    <div class="card">
+      <h2>How to Use These Videos</h2>
+
+      <ul class="feature-list">
+        <li>
+          Watch with pencil and paper nearby. Pause the video before each worked
+          example is completed and try to finish the next step on your own.
+        </li>
+
+        <li>
+          Take the embedded questions seriously. They are included to help you
+          check whether you are following the main ideas, not just watching
+          passively.
+        </li>
+
+        <li>
+          For exam preparation, focus on explaining why a method applies. In
+          Calculus I, recognizing the structure of a problem is often as important
+          as carrying out the computation.
+        </li>
+
+        <li>
+          Rewatch videos selectively. Rather than reviewing everything at once,
+          return to the topics where your homework, quizzes, or practice exams
+          show the most room for growth.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Brian Mulholland · University of Notre Dame</p>
+</footer>
+
+</body>
+</html>
